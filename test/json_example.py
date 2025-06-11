@@ -126,13 +126,20 @@ if __name__ == '__main__':
         sys.argv.pop(1)
         unittest.main()
     else:
+        try:
+            input = raw_input
+        except NameError:
+            pass
         while True:
             try:
-                program = raw_input("> ")
+                program = input("> ")
                 for result in parse_expr(program):
                     print(repr(result))
             except EOFError:
                 print("")
                 exit(0)
+            except KeyboardInterrupt:
+                print("")
+                sys.exit(0)
 
 
