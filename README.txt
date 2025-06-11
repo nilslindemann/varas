@@ -17,7 +17,7 @@ Installation
 
 The source is available for download from github here:
 
-  https://github.com/JonCoppeard/varas/downloads
+  https://github.com/JonCoppeard/varas
 
 You can run the test code like this:
 
