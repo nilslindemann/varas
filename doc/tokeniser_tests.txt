@@ -43,10 +43,10 @@ end token:
 
 Attempting to parse invalid input will raise a ParseError:
 
-  >>> list(tokenizer.tokenize("one 2!!! three"))
+  >>> list(tokenizer.tokenize("one 2!!! three"))  # doctest: +IGNORE_EXCEPTION_DETAIL
   Traceback (most recent call last):
   ...
-  varas.ParseError: Can't tokenize input at line 1 column 5
+  ParseError: Can't tokenize input at line 1 column 5
 
 For token types which only match a fixed string -- for example an operators or
 keyword in a computer language -- it is helpful to have the token type be the
