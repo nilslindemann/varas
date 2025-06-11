@@ -23,7 +23,13 @@ def convert_to_unix_line_endings(source):
         os.mkdir("tmp")
 
     dest = "tmp/" + os.path.basename(source)
-    source_file = open(source, "U")
+    
+    # https://stackoverflow.com/a/56791818 - "U" has been removed in 3.11
+    try:
+        source_file = open(source, "U")
+    except ValueError:
+        source_file = open(source, "r")
+
     dest_file = open(dest, "w")
     dest_file.writelines(source_file)
     dest_file.close()

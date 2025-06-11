@@ -21,7 +21,12 @@ Concepts:
 """
 
 import re
-from StringIO import StringIO
+
+# https://docs.python.org/3.0/whatsnew/3.0.html - "The StringIO and cStringIO modules are gone. Instead, import the io module"
+try:
+    from StringIO import StringIO 
+except ImportError:
+    from io import StringIO 
 
 class Assoc:
     """
@@ -101,7 +106,7 @@ class Tokenizer:
     tokens.
     """
 
-    whitespace_pattern = "\s*"
+    whitespace_pattern = r"\s*"
 
     def __init__(self, *token_defs):
         """

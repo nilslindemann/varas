@@ -20,8 +20,8 @@ like this:
 
   >>> WORD_TOKEN = "WORD"
   >>> NUMBER_TOKEN = "NUM"
-  >>> tokenizer = Tokenizer( ("\d+", NUMBER_TOKEN),
-  ...                        ("\w+", WORD_TOKEN) )
+  >>> tokenizer = Tokenizer( (r"\d+", NUMBER_TOKEN),
+  ...                        (r"\w+", WORD_TOKEN) )
 
 Calling the tokenize() method returns a generator object, which in turn yields
 instances of Token().  The tokenizer always includes a token of type
@@ -46,7 +46,7 @@ Attempting to parse invalid input will raise a ParseError:
   >>> list(tokenizer.tokenize("one 2!!! three"))
   Traceback (most recent call last):
   ...
-  ParseError: Can't tokenize input at line 1 column 5
+  varas.ParseError: Can't tokenize input at line 1 column 5
 
 For token types which only match a fixed string -- for example an operators or
 keyword in a computer language -- it is helpful to have the token type be the

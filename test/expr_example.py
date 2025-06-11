@@ -6,7 +6,7 @@ import re
 
 LITERAL_TOKEN = 1
 
-tokenizer = Tokenizer(("\d+", LITERAL_TOKEN),
+tokenizer = Tokenizer((r"\d+", LITERAL_TOKEN),
                       (".",   None))
 
 def handle_lparen(parser, actions, token):

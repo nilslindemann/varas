@@ -36,7 +36,7 @@ First we create a tokenizer.  There will be two types of tokens - literal
 numbers and mathematical operators.  Tokens are matched by regular expressions.
 
   >>> from varas import *
-  >>> tok = Tokenizer( ("\d+", "NUMBER"),
+  >>> tok = Tokenizer( (r"\d+", "NUMBER"),
   ...                  ("[-+*/^]", None) )
 
   >>> list(tok.tokenize("2 +"))
