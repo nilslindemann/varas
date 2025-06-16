@@ -128,11 +128,9 @@ if __name__ == '__main__':
     else:
         while True:
             try:
-                program = raw_input("> ")
+                program = input("> ")
                 for result in parse_expr(program):
                     print(repr(result))
-            except EOFError:
+            except (EOFError, KeyboardInterrupt):
                 print("")
-                exit(0)
-
-
+                sys.exit(0)

@@ -21,7 +21,7 @@ Concepts:
 """
 
 import re
-from StringIO import StringIO
+from io import StringIO
 
 class Assoc:
     """
@@ -101,7 +101,7 @@ class Tokenizer:
     tokens.
     """
 
-    whitespace_pattern = "\s*"
+    whitespace_pattern = r"\s*"
 
     def __init__(self, *token_defs):
         """

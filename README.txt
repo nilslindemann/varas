@@ -17,7 +17,7 @@ Installation
 
 The source is available for download from github here:
 
-  https://github.com/JonCoppeard/varas/downloads
+  https://github.com/JonCoppeard/varas
 
 You can run the test code like this:
 
@@ -36,7 +36,7 @@ First we create a tokenizer.  There will be two types of tokens - literal
 numbers and mathematical operators.  Tokens are matched by regular expressions.
 
   >>> from varas import *
-  >>> tok = Tokenizer( ("\d+", "NUMBER"),
+  >>> tok = Tokenizer( (r"\d+", "NUMBER"),
   ...                  ("[-+*/^]", None) )
 
   >>> list(tok.tokenize("2 +"))

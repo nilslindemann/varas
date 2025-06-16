@@ -23,7 +23,7 @@ def convert_to_unix_line_endings(source):
         os.mkdir("tmp")
 
     dest = "tmp/" + os.path.basename(source)
-    source_file = open(source, "U")
+    source_file = open(source, "r")
     dest_file = open(dest, "w")
     dest_file.writelines(source_file)
     dest_file.close()
